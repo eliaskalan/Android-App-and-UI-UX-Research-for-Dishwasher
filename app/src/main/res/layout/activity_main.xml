@@ -25,4 +25,87 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"/>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_soft"
+        android:layout_width="362dp"
+        android:layout_height="500dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="16dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="94dp">
+
+        <ImageView
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="345dp"
+            android:background="#4CAF50"
+            android:text="Hello, World!"
+            android:textColor="#FFFFFF" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_classic"
+        android:layout_width="367dp"
+        android:layout_height="502dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="16dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="458dp"
+        tools:layout_editor_absoluteY="92dp">
+
+        <!-- Add your card content here -->
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_strong"
+        android:layout_width="359dp"
+        android:layout_height="502dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="16dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="874dp"
+        tools:layout_editor_absoluteY="94dp">
+
+        <!-- Add your card content here -->
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/button_soft_detail"
+        android:layout_width="362dp"
+        android:layout_height="80dp"
+        android:text="Button"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="463dp"
+        tools:layout_editor_absoluteY="615dp" />
+
+
+
+    <Button
+        android:id="@+id/button_classic_detail"
+        android:layout_width="362dp"
+        android:layout_height="80dp"
+        android:text="Button"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="615dp" />
+
+    <Button
+        android:id="@+id/button_strong_detail3"
+        android:layout_width="362dp"
+        android:layout_height="80dp"
+        android:text="Button"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="874dp"
+        tools:layout_editor_absoluteY="615dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
