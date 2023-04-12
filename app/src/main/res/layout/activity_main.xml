@@ -31,33 +31,38 @@
         android:id="@+id/card_soft"
         android:layout_width="362dp"
         android:layout_height="500dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginBottom="21dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="16dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="94dp">
+        app:layout_constraintBottom_toTopOf="@+id/button_classic_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
         <LinearLayout
-            android:id="@+id/linear_layout"
+            android:id="@+id/linear_layout_soft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/image_view_green"
                 android:layout_width="match_parent"
                 android:layout_height="345dp"
+                android:adjustViewBounds="true"
                 android:background="#4CAF50"
                 android:text="Hello, World!"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:src="@drawable/plate_soft"
+                android:scaleType="centerInside" />
 
             <TextView
-                android:gravity="center_horizontal"
                 android:id="@+id/text_view_soft"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:padding="16dp"
                 android:text="Soft\n40 °C"
 
@@ -72,31 +77,88 @@
         android:id="@+id/card_classic"
         android:layout_width="367dp"
         android:layout_height="502dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginBottom="21dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="16dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="458dp"
-        tools:layout_editor_absoluteY="92dp">
+        app:layout_constraintBottom_toTopOf="@+id/button_soft_detail"
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        tools:ignore="MissingConstraints">
 
         <!-- Add your card content here -->
+        <LinearLayout
+            android:id="@+id/linear_layout_classic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/image_view_orange"
+                android:layout_width="match_parent"
+                android:layout_height="345dp"
+                android:background="#FF9800"
+                android:text="Hello, World!"
+                android:src="@drawable/plate_classic"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/text_view_classic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="16dp"
+                android:text="Classic\n60 °C"
+
+                android:textColor="#000000"
+                android:textSize="32sp" />
+
+        </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_strong"
         android:layout_width="359dp"
         android:layout_height="502dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginBottom="20dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="16dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="874dp"
-        tools:layout_editor_absoluteY="94dp">
+        app:layout_constraintBottom_toTopOf="@+id/button_strong_detail3"
+        app:layout_constraintStart_toEndOf="@+id/card_classic"
+        tools:ignore="MissingConstraints">
 
         <!-- Add your card content here -->
+        <LinearLayout
+            android:id="@+id/linear_layout_strong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_view_red"
+                android:layout_width="match_parent"
+                android:layout_height="345dp"
+                android:background="#F44336"
+                android:text="Hello, World!"
+                android:src="@drawable/plate_strong"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/text_view_strong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="16dp"
+                android:text="Strong\n80 °C"
+
+                android:textColor="#000000"
+                android:textSize="32sp" />
+
+        </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -104,29 +166,34 @@
         android:id="@+id/button_soft_detail"
         android:layout_width="362dp"
         android:layout_height="80dp"
+        android:layout_marginStart="409dp"
+        android:layout_marginBottom="25dp"
         android:text="Button"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="463dp"
-        tools:layout_editor_absoluteY="615dp" />
-
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="@+id/button_classic_detail"
+        tools:ignore="MissingConstraints" />
 
 
     <Button
         android:id="@+id/button_classic_detail"
         android:layout_width="362dp"
         android:layout_height="80dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginBottom="25dp"
         android:text="Button"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="615dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button_strong_detail3"
         android:layout_width="362dp"
         android:layout_height="80dp"
+        android:layout_marginStart="408dp"
+        android:layout_marginBottom="24dp"
         android:text="Button"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="874dp"
-        tools:layout_editor_absoluteY="615dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintStart_toStartOf="@+id/button_soft_detail"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
