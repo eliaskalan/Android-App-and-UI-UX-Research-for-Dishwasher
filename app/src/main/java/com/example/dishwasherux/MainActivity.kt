@@ -1,5 +1,7 @@
 package com.example.dishwasherux
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
@@ -29,7 +31,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.buttonSoftDetail.setOnClickListener {
+            val intent = Intent(this, DetailsActivity::class.java)
+            intent.putExtra("selection", 1)
+            startActivity(intent)
+        }
+
+
     }
+
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
