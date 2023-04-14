@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
@@ -32,12 +33,25 @@ class DetailsActivity : AppCompatActivity() {
 
         }
         var customColor = "#FFFFFF"
+        var customTxt = "NaN"
         System.out.println(intent.getStringExtra("selection"))
         if(intent.getStringExtra("selection")=="1"){
             customColor = "#4CAF50"
-            val colorInt = Color.parseColor(customColor)
-            val myView = findViewById<RelativeLayout>(R.id.image_container)
-            myView.setBackgroundColor(colorInt)
+            customTxt= "Soft\n40 °C"
         }
+        if(intent.getStringExtra("selection")=="2"){
+            customColor = "#FF9800"
+            customTxt= "Classic\n60 °C"
+        }
+        if(intent.getStringExtra("selection")=="3"){
+            customColor = "#F44336"
+            customTxt= "Soft\n80 °C"
+        }
+        val colorInt = Color.parseColor(customColor)
+        val imgContainer = findViewById<RelativeLayout>(R.id.image_container)
+        imgContainer.setBackgroundColor(colorInt)
+        val txtContainer = findViewById<TextView>(R.id.text_view_soft)
+        txtContainer.setText(customTxt)
+
     }
 }
