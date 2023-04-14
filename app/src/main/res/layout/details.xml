@@ -27,18 +27,19 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_soft"
         android:layout_width="362dp"
         android:layout_height="500dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="156dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_classic_detail"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -46,18 +47,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
+            <RelativeLayout
+                android:id="@+id/image_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF4081">
             <ImageView
                 android:id="@+id/image_view_green"
                 android:layout_width="match_parent"
                 android:layout_height="345dp"
                 android:adjustViewBounds="true"
-                android:background="#4CAF50"
+
                 android:scaleType="centerInside"
                 android:src="@drawable/plate_soft"
-                android:text="Hello, World!"
                 android:textColor="#FFFFFF" />
-
+            </RelativeLayout>
             <TextView
                 android:id="@+id/text_view_soft"
                 android:layout_width="match_parent"
@@ -73,24 +77,12 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
-    <Button
-        android:id="@+id/button_classic_detail"
-        android:layout_width="362dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginBottom="25dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="85dp"
         android:layout_height="65dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
         android:drawableLeft="@drawable/baseline_power_settings_new_24"
         android:drawablePadding="10dp"
         android:padding="20dp"
@@ -99,11 +91,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="467dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="276dp"
+        android:layout_width="678dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="16dp"
-        android:text="Επήλεξε Προγραμμα"
+        android:text="Πληροφορίες Προγράμματος"
         android:textSize="50sp"
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent"
@@ -113,12 +105,46 @@
         android:id="@+id/button2"
         android:layout_width="85dp"
         android:layout_height="65dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
         android:drawableLeft="@drawable/baseline_volume_off_24"
         android:drawablePadding="10dp"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="111dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="24dp"
+        android:text="Title"
+        android:textSize="50sp"
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="448dp"
+        android:layout_height="358dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="240dp"
+        android:text="Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla
+        Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla "
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/button_details_back"
+        android:layout_width="83dp"
+        android:layout_height="491dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="72dp"
+        android:text="BACK"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

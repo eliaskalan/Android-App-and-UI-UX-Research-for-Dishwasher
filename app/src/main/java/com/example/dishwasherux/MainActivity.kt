@@ -33,9 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonSoftDetail.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("selection", 1)
+            intent.putExtra("selection", "1")
             startActivity(intent)
         }
+
 
 
     }
