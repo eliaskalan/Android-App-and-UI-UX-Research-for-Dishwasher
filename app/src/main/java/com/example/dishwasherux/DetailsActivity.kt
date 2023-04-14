@@ -7,6 +7,7 @@ import android.telecom.Call.Details
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -34,24 +35,30 @@ class DetailsActivity : AppCompatActivity() {
         }
         var customColor = "#FFFFFF"
         var customTxt = "NaN"
+        var customImg =resources.getDrawable(R.drawable.plate_soft, theme)
         System.out.println(intent.getStringExtra("selection"))
         if(intent.getStringExtra("selection")=="1"){
             customColor = "#4CAF50"
             customTxt= "Soft\n40 °C"
+            customImg = resources.getDrawable(R.drawable.plate_soft, theme)
         }
         if(intent.getStringExtra("selection")=="2"){
             customColor = "#FF9800"
             customTxt= "Classic\n60 °C"
+            customImg = resources.getDrawable(R.drawable.plate_classic, theme)
         }
         if(intent.getStringExtra("selection")=="3"){
             customColor = "#F44336"
             customTxt= "Soft\n80 °C"
+            customImg = resources.getDrawable(R.drawable.plate_strong, theme)
         }
         val colorInt = Color.parseColor(customColor)
         val imgContainer = findViewById<RelativeLayout>(R.id.image_container)
         imgContainer.setBackgroundColor(colorInt)
         val txtContainer = findViewById<TextView>(R.id.text_view_soft)
         txtContainer.setText(customTxt)
+        val imgView = findViewById<ImageView>(R.id.image_view)
+        imgView.setImageDrawable(customImg)
 
     }
 }

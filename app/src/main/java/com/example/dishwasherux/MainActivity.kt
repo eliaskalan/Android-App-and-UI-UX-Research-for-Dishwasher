@@ -46,7 +46,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("selection", "3")
             startActivity(intent)
         }
-
+        binding.cardSoft.setOnClickListener {
+            val intent = Intent(this, TimeActivity::class.java)
+            intent.putExtra("selection", "1")
+            startActivity(intent)
+        }
 
 
     }

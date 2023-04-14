@@ -30,6 +30,9 @@
         <activity
             android:name=".DetailsActivity"
             android:label="Details Activity"/>
+        <activity
+            android:name=".TimeActivity"
+            android:label="Time Activity"/>
 
 
     </application>

@@ -47,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <RelativeLayout
                 android:id="@+id/image_container"
                 android:layout_width="match_parent"
@@ -54,7 +55,7 @@
                 android:background="#FF4081">
 
                 <ImageView
-                    android:id="@+id/image_view"
+                    android:id="@+id/image_view_green"
                     android:layout_width="match_parent"
                     android:layout_height="345dp"
                     android:adjustViewBounds="true"
@@ -63,6 +64,7 @@
                     android:src="@drawable/plate_soft"
                     android:textColor="#FFFFFF" />
             </RelativeLayout>
+
             <TextView
                 android:id="@+id/text_view_soft"
                 android:layout_width="match_parent"
@@ -92,12 +94,13 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="678dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="16dp"
-        android:text="Πληροφορίες Προγράμματος"
+        android:layout_width="366dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="316dp"
+        android:layout_marginTop="28dp"
+        android:text="Επήλεξε Χρόνο"
         android:textSize="50sp"
+
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -114,29 +117,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="111dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="24dp"
-        android:text="Title"
-        android:textSize="50sp"
-        app:layout_constraintStart_toEndOf="@+id/card_soft"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="448dp"
-        android:layout_height="358dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="240dp"
-        android:text="Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla
-        Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla Mpla "
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
-
     <Button
         android:id="@+id/button_details_back"
         android:layout_width="83dp"
@@ -147,5 +127,101 @@
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="556dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="44dp"
+        android:text="Ξεκίνα Τώρα"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="540dp"
+        android:layout_height="408dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="136dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button_minutes_down"
+            android:layout_width="161dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="74dp"
+            android:text="-"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/button_minutes_up"
+            android:layout_width="161dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-250dp"
+            android:layout_marginEnd="70dp"
+            android:text="+"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/button_hours_down"
+            android:layout_width="161dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="253dp"
+            android:text="-"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/button_hours_up"
+            android:layout_width="161dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-253dp"
+            android:layout_marginEnd="255dp"
+            android:text="+"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="163dp"
+            android:layout_height="139dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="121dp"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/rounded_textview_background"
+            android:gravity="center"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="100sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="163dp"
+            android:layout_height="139dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="121dp"
+            android:layout_marginEnd="258dp"
+            android:background="@drawable/rounded_textview_background"
+            android:gravity="center"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="100sp" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
