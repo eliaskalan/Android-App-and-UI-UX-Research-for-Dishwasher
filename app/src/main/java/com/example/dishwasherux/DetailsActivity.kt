@@ -36,7 +36,6 @@ class DetailsActivity : AppCompatActivity() {
         val selectionId = intent.getStringExtra("id");
         for(selection in Selections){
             if(selection.id == selectionId){
-                println(selection.id);
                 val colorInt = Color.parseColor(selection.color)
                 val imgContainer = findViewById<RelativeLayout>(R.id.image_container)
                 imgContainer.setBackgroundColor(colorInt)
