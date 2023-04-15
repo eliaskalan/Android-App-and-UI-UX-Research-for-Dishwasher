@@ -48,15 +48,13 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image_view_green"
+                android:id="@+id/image_view_soft"
                 android:layout_width="match_parent"
                 android:layout_height="345dp"
                 android:adjustViewBounds="true"
-                android:background="#4CAF50"
                 android:scaleType="centerInside"
                 android:src="@drawable/plate_soft"
-                android:text="Hello, World!"
-                android:textColor="#FFFFFF" />
+                />
 
             <TextView
                 android:id="@+id/text_view_soft"
@@ -64,8 +62,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="16dp"
-                android:text="Soft\n40 °C"
-
                 android:textColor="#000000"
                 android:textSize="32sp" />
 
@@ -95,22 +91,17 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image_view_orange"
+                android:id="@+id/image_view_normal"
                 android:layout_width="match_parent"
                 android:layout_height="345dp"
-                android:background="#FF9800"
-                android:text="Hello, World!"
-                android:src="@drawable/plate_classic"
-                android:textColor="#FFFFFF" />
+               />
 
             <TextView
-                android:id="@+id/text_view_classic"
+                android:id="@+id/text_view_normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="16dp"
-                android:text="Classic\n60 °C"
-
                 android:textColor="#000000"
                 android:textSize="32sp" />
 
@@ -139,13 +130,11 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image_view_red"
+                android:id="@+id/image_view_strong"
                 android:layout_width="match_parent"
                 android:layout_height="345dp"
-                android:background="#F44336"
-                android:text="Hello, World!"
                 android:src="@drawable/plate_strong"
-                android:textColor="#FFFFFF" />
+                 />
 
             <TextView
                 android:id="@+id/text_view_strong"
@@ -153,8 +142,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="16dp"
-                android:text="Strong\n80 °C"
-
                 android:textColor="#000000"
                 android:textSize="32sp" />
 
@@ -169,7 +156,7 @@
         android:layout_height="80dp"
         android:layout_marginStart="52dp"
         android:layout_marginBottom="36dp"
-        android:text="Button"
+        android:text="Πληροφορίες"
 
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +168,7 @@
         android:layout_height="80dp"
         android:layout_marginStart="464dp"
         android:layout_marginBottom="36dp"
-        android:text="Button"
+        android:text="Πληροφορίες"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
@@ -192,7 +179,7 @@
         android:layout_height="80dp"
         android:layout_marginStart="880dp"
         android:layout_marginBottom="40dp"
-        android:text="Button"
+        android:text="Πληροφορίες"
         app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
@@ -229,6 +216,7 @@
         android:drawablePadding="10dp"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="15dp" />
+        tools:layout_editor_absoluteY="15dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

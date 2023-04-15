@@ -2,6 +2,7 @@ package com.example.dishwasherux
 
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
@@ -14,7 +15,9 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-
+import android.widget.ImageView
+import android.widget.RelativeLayout
+import android.widget.TextView
 import com.example.dishwasherux.databinding.ActivityMainBinding
 import org.w3c.dom.Text
 import java.lang.reflect.Modifier
@@ -31,19 +34,43 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Soft Selection
+        var softImageView = findViewById<ImageView>(R.id.image_view_soft)
+        softImageView.setBackgroundColor(Color.parseColor(SoftSelection.color))
+        var softImageViewImage = resources.getDrawable(SoftSelection.imagePath, theme)
+        softImageView.setImageDrawable(softImageViewImage);
+        var softText = findViewById<TextView>(R.id.text_view_soft);
+        softText.text = SoftSelection.title + "\n" + SoftSelection.temperature + "°C";
+
+        // Normal Selection
+        var normalImageView = findViewById<ImageView>(R.id.image_view_normal)
+        normalImageView.setBackgroundColor(Color.parseColor(NormalSection.color))
+        var normalImageViewImage = resources.getDrawable(NormalSection.imagePath, theme)
+        normalImageView.setImageDrawable(normalImageViewImage);
+        var normalText = findViewById<TextView>(R.id.text_view_normal);
+        normalText.text = NormalSection.title + "\n" + NormalSection.temperature + "°C";
+
+        // Strong Selection
+        var strongImageView = findViewById<ImageView>(R.id.image_view_strong)
+        strongImageView.setBackgroundColor(Color.parseColor(StrongSection.color))
+        var strongImageViewImage = resources.getDrawable(StrongSection.imagePath, theme)
+        strongImageView.setImageDrawable(strongImageViewImage);
+        var strongText = findViewById<TextView>(R.id.text_view_strong);
+        strongText.text = StrongSection.title + "\n" + StrongSection.temperature + "°C";
+
         binding.buttonSoftDetail.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("selection", "1")
+            intent.putExtra("id", SoftSelection.id)
             startActivity(intent)
         }
         binding.buttonClassicDetail.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("selection", "2")
+            intent.putExtra("id", NormalSection.id)
             startActivity(intent)
         }
         binding.buttonStrongDetail3.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("selection", "3")
+            intent.putExtra("id", StrongSection.id)
             startActivity(intent)
         }
         binding.cardSoft.setOnClickListener {

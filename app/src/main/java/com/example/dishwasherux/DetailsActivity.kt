@@ -33,32 +33,25 @@ class DetailsActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-        var customColor = "#FFFFFF"
-        var customTxt = "NaN"
-        var customImg =resources.getDrawable(R.drawable.plate_soft, theme)
-        System.out.println(intent.getStringExtra("selection"))
-        if(intent.getStringExtra("selection")=="1"){
-            customColor = "#4CAF50"
-            customTxt= "Soft\n40 °C"
-            customImg = resources.getDrawable(R.drawable.plate_soft, theme)
+        val selectionId = intent.getStringExtra("id");
+        for(selection in Selections){
+            if(selection.id == selectionId){
+                println(selection.id);
+                val colorInt = Color.parseColor(selection.color)
+                val imgContainer = findViewById<RelativeLayout>(R.id.image_container)
+                imgContainer.setBackgroundColor(colorInt)
+                val txtContainer = findViewById<TextView>(R.id.text_view)
+                txtContainer.text = selection.title + "\n" + selection.temperature + "°C";
+                val imgView = findViewById<ImageView>(R.id.image_view)
+                var customImg =resources.getDrawable(selection.imagePath, theme)
+                imgView.setImageDrawable(customImg)
+                val textViewTitle = findViewById<TextView>(R.id.text_view_title);
+                textViewTitle.text = selection.title;
+                val textViewDescription = findViewById<TextView>(R.id.text_view_description);
+                textViewDescription.text = selection.description;
+            }
         }
-        if(intent.getStringExtra("selection")=="2"){
-            customColor = "#FF9800"
-            customTxt= "Classic\n60 °C"
-            customImg = resources.getDrawable(R.drawable.plate_classic, theme)
-        }
-        if(intent.getStringExtra("selection")=="3"){
-            customColor = "#F44336"
-            customTxt= "Soft\n80 °C"
-            customImg = resources.getDrawable(R.drawable.plate_strong, theme)
-        }
-        val colorInt = Color.parseColor(customColor)
-        val imgContainer = findViewById<RelativeLayout>(R.id.image_container)
-        imgContainer.setBackgroundColor(colorInt)
-        val txtContainer = findViewById<TextView>(R.id.text_view_soft)
-        txtContainer.setText(customTxt)
-        val imgView = findViewById<ImageView>(R.id.image_view)
-        imgView.setImageDrawable(customImg)
+
 
     }
 }
