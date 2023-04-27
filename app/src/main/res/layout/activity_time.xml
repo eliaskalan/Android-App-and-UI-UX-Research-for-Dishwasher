@@ -55,7 +55,7 @@
                 android:background="#FF4081">
 
                 <ImageView
-                    android:id="@+id/image_view_green"
+                    android:id="@+id/image_view"
                     android:layout_width="match_parent"
                     android:layout_height="345dp"
                     android:adjustViewBounds="true"
@@ -71,8 +71,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="16dp"
-                android:text="Soft\n40 °C"
-
                 android:textColor="#000000"
                 android:textSize="32sp" />
 

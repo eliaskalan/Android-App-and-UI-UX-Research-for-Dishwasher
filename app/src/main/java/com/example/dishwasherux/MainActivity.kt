@@ -75,7 +75,17 @@ class MainActivity : AppCompatActivity() {
         }
         binding.cardSoft.setOnClickListener {
             val intent = Intent(this, TimeActivity::class.java)
-            intent.putExtra("selection", "1")
+            intent.putExtra("id", SoftSelection.id)
+            startActivity(intent)
+        }
+        binding.cardClassic.setOnClickListener {
+            val intent = Intent(this, TimeActivity::class.java)
+            intent.putExtra("id", NormalSection.id)
+            startActivity(intent)
+        }
+        binding.cardStrong.setOnClickListener {
+            val intent = Intent(this, TimeActivity::class.java)
+            intent.putExtra("id", StrongSection.id)
             startActivity(intent)
         }
 
