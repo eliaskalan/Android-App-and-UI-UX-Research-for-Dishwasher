@@ -64,9 +64,9 @@ class ReviewActivity : AppCompatActivity() {
         val finalMinute = (currentMinute + minutes) % 60
         val programFinishMinutes = (currentMinute + minutes + durationMinutes) % 60
         val programFinishHours = (currentHour + hours + durationHours + (currentMinute + minutes + durationMinutes) / 60) % 24
-        binding.textView4.text = String.format("%02d", finalHour)
-        binding.textView6.text = String.format("%02d", finalMinute)
-        binding.textView2.text = String.format("%02d", programFinishHours)
-        binding.textView3.text = String.format("%02d", programFinishMinutes)
+        binding.startHour.text = String.format("%02d", finalHour)
+        binding.startMinutes.text = String.format("%02d", finalMinute)
+        binding.finishHour.text = String.format("%02d", programFinishHours)
+        binding.finishMinutes.text = String.format("%02d", programFinishMinutes)
     }
 }

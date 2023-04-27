@@ -5,27 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="1032dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_home_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="720dp">
 
     </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_soft"
@@ -73,8 +76,8 @@
         android:id="@+id/card_classic"
         android:layout_width="367dp"
         android:layout_height="502dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="24dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
@@ -93,8 +96,7 @@
             <ImageView
                 android:id="@+id/image_view_normal"
                 android:layout_width="match_parent"
-                android:layout_height="345dp"
-               />
+                android:layout_height="345dp" />
 
             <TextView
                 android:id="@+id/text_view_normal"
@@ -155,10 +157,10 @@
         android:layout_width="362dp"
         android:layout_height="80dp"
         android:layout_marginStart="52dp"
-        android:layout_marginBottom="36dp"
-        android:text="Πληροφορίες"
+        android:layout_marginBottom="20dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        android:text="Πληροφορίες"
+        app:layout_constraintBottom_toTopOf="@+id/my_square"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -167,9 +169,9 @@
         android:layout_width="362dp"
         android:layout_height="80dp"
         android:layout_marginStart="464dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="20dp"
         android:text="Πληροφορίες"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/my_square"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -178,9 +180,9 @@
         android:layout_width="362dp"
         android:layout_height="80dp"
         android:layout_marginStart="880dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="24dp"
         android:text="Πληροφορίες"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/my_square"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -218,5 +220,156 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="15dp"
         tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/my_square"
+        android:layout_width="1246dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </View>
+
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="1032dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_flag_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_home_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="552dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_fact_check_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="772dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_hourglass_bottom_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_access_time_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="8dp"
+        android:text="Πρόγραμμα"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="8dp"
+        android:text="Χρόνος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="780dp"
+        android:layout_marginBottom="8dp"
+        android:text="Σε εξέλιξη"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="1064dp"
+        android:layout_marginBottom="8dp"
+        android:text="Τέλος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="568dp"
+        android:layout_marginBottom="8dp"
+        android:text="Έλεγχος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

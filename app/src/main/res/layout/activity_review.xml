@@ -6,104 +6,79 @@
     android:layout_height="match_parent">
 
 
-
-    <FrameLayout
-        android:id="@+id/frameLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </FrameLayout>
-
-
     <View
-        android:id="@+id/my_square"
+        android:id="@+id/time_container"
         android:layout_width="568dp"
         android:layout_height="422dp"
         android:layout_marginStart="124dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/reqt"
         app:layout_constraintStart_toEndOf="@+id/card_soft"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/finish_minutes"
         android:layout_width="163dp"
         android:layout_height="139dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="412dp"
+        android:layout_marginTop="224dp"
         android:background="@drawable/rounded_textview_background"
         android:gravity="center"
         android:text="00"
         android:textAlignment="center"
         android:textSize="100sp"
-        app:layout_constraintBottom_toBottomOf="@+id/my_square"
-        app:layout_constraintEnd_toEndOf="@+id/my_square" />
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/finish_hour"
         android:layout_width="163dp"
         android:layout_height="139dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="220dp"
         android:background="@drawable/rounded_textview_background"
         android:gravity="center"
         android:text="00"
         android:textAlignment="center"
         android:textSize="100sp"
-        app:layout_constraintBottom_toBottomOf="@+id/my_square"
-        app:layout_constraintStart_toStartOf="@+id/my_square" />
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/start_hour"
         android:layout_width="163dp"
         android:layout_height="139dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_textview_background"
         android:gravity="center"
         android:text="00"
         android:textAlignment="center"
         android:textSize="100sp"
-        app:layout_constraintStart_toStartOf="@+id/my_square"
-        app:layout_constraintTop_toTopOf="@+id/my_square" />
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/start_minutes"
         android:layout_width="163dp"
         android:layout_height="139dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginStart="408dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_textview_background"
         android:gravity="center"
         android:text="00"
         android:textAlignment="center"
         android:textSize="100sp"
-        app:layout_constraintEnd_toEndOf="@+id/my_square"
-        app:layout_constraintTop_toTopOf="@+id/my_square" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_soft"
@@ -194,56 +169,209 @@
         android:id="@+id/button_details_back"
         android:layout_width="83dp"
         android:layout_height="491dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="152dp"
         android:text="BACK"
+
         android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="405dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="64dp"
         android:text="Start Time:"
         android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="@+id/my_square"
-        app:layout_constraintTop_toTopOf="@+id/my_square" />
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="405dp"
         android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="284dp"
         android:text="Finish Time:"
         android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="@+id/my_square"
-        app:layout_constraintTop_toTopOf="@+id/my_square" />
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/Cancel"
         android:layout_width="243dp"
         android:layout_height="109dp"
-        android:layout_marginStart="144dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="112dp"
         android:backgroundTint="#C20000"
         android:text="Ακύρωση"
+
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/card_soft" />
 
     <Button
-        android:id="@+id/Start"
+        android:id="@+id/start"
         android:layout_width="264dp"
         android:layout_height="109dp"
-        android:layout_marginStart="412dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="408dp"
+        android:layout_marginBottom="112dp"
         android:backgroundTint="#429454"
         android:text="Έναρξη"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/card_soft" />
+
+    <View
+        android:id="@+id/my_square"
+        android:layout_width="1246dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </View>
+
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="1032dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_flag_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_home_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="552dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_fact_check_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="772dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_hourglass_bottom_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_access_time_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="8dp"
+        android:text="Πρόγραμμα"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="8dp"
+        android:text="Χρόνος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="780dp"
+        android:layout_marginBottom="8dp"
+        android:text="Σε εξέλιξη"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="1064dp"
+        android:layout_marginBottom="8dp"
+        android:text="Τέλος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="568dp"
+        android:layout_marginBottom="8dp"
+        android:text="Έλεγχος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
