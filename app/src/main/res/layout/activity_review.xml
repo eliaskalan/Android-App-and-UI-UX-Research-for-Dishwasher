@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
+
+
+    <View
+        android:id="@+id/my_square"
+        android:layout_width="568dp"
+        android:layout_height="422dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/reqt"
+        app:layout_constraintStart_toEndOf="@+id/card_soft"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="163dp"
+        android:layout_height="139dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_textview_background"
+        android:gravity="center"
+        android:text="00"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintEnd_toEndOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="163dp"
+        android:layout_height="139dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_textview_background"
+        android:gravity="center"
+        android:text="00"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="163dp"
+        android:layout_height="139dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/rounded_textview_background"
+        android:gravity="center"
+        android:text="00"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        app:layout_constraintStart_toStartOf="@+id/my_square"
+        app:layout_constraintTop_toTopOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="163dp"
+        android:layout_height="139dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="116dp"
+        android:background="@drawable/rounded_textview_background"
+        android:gravity="center"
+        android:text="00"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        app:layout_constraintEnd_toEndOf="@+id/my_square"
+        app:layout_constraintTop_toTopOf="@+id/my_square" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_soft"
+        android:layout_width="362dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="156dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_soft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/image_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="345dp"
+                    android:adjustViewBounds="true"
+
+                    android:scaleType="centerInside"
+                    android:src="@drawable/plate_soft"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="16dp"
+                android:textColor="#000000"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
+        android:drawableLeft="@drawable/baseline_power_settings_new_24"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="678dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="16dp"
+        android:text="Πληροφορίες Προγράμματος"
+        android:textSize="50sp"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        android:drawableLeft="@drawable/baseline_volume_off_24"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_details_back"
+        android:layout_width="83dp"
+        android:layout_height="491dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="72dp"
+        android:text="BACK"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="405dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Start Time:"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@+id/my_square"
+        app:layout_constraintTop_toTopOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="405dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="192dp"
+        android:text="Finish Time:"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@+id/my_square"
+        app:layout_constraintTop_toTopOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/Cancel"
+        android:layout_width="243dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="144dp"
+        android:backgroundTint="#C20000"
+        android:text="Ακύρωση"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toEndOf="@+id/card_soft" />
+
+    <Button
+        android:id="@+id/Start"
+        android:layout_width="264dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="412dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#429454"
+        android:text="Έναρξη"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintStart_toEndOf="@+id/card_soft" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

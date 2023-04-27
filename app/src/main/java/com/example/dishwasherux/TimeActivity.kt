@@ -83,6 +83,14 @@ class TimeActivity : AppCompatActivity() {
             }
             updateDisplay()
         }
+        binding.startButton.setOnClickListener {
+            val intent = Intent(this, ReviewActivity::class.java)
+            intent.putExtra("id", selectionId)
+            intent.putExtra("hours",hours)
+            intent.putExtra("minutes", minutes)
+            startActivity(intent)
+        }
+
     }
 
     private fun updateDisplay() {
@@ -97,4 +105,5 @@ class TimeActivity : AppCompatActivity() {
             txtContainer.text = "Ξεκίνα Τωρα "
         }
     }
+
 }

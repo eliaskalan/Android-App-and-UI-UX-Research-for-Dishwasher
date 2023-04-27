@@ -21,6 +21,7 @@
             android:theme="@style/Theme.DishWasherUx"
             >
 
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,8 +34,10 @@
         <activity
             android:name=".TimeActivity"
             android:label="Time Activity"/>
+        <activity
+            android:name=".ReviewActivity"
 
-
+            android:label="ReviewActivity"/>
     </application>
 
 </manifest>
