@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <View
+        android:id="@+id/my_square"
+        android:layout_width="1246dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </View>
+
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="1032dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_flag_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_home_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="552dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_fact_check_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="772dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_hourglass_bottom_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_access_time_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="8dp"
+        android:text="Πρόγραμμα"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="8dp"
+        android:text="Χρόνος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="780dp"
+        android:layout_marginBottom="8dp"
+        android:text="Σε εξέλιξη"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="1064dp"
+        android:layout_marginBottom="8dp"
+        android:text="Τέλος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="568dp"
+        android:layout_marginBottom="8dp"
+        android:text="Έλεγχος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_soft"
+        android:layout_width="362dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="156dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_soft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/image_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF4081">
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="345dp"
+                    android:adjustViewBounds="true"
+
+                    android:scaleType="centerInside"
+                    android:src="@drawable/plate_soft"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_view_soft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="16dp"
+                android:textColor="#000000"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
+        android:drawableLeft="@drawable/baseline_power_settings_new_24"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="366dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="316dp"
+        android:layout_marginTop="28dp"
+        android:text="Επήλεξε Χρόνο"
+        android:textSize="50sp"
+
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        android:drawableLeft="@drawable/baseline_volume_off_24"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_details_back"
+        android:layout_width="83dp"
+        android:layout_height="491dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="80dp"
+        android:text="BACK"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="556dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="24dp"
+        android:text="Ξεκίνα Τώρα"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="540dp"
+        android:layout_height="408dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="136dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button_minutes_down"
+            android:layout_width="161dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="74dp"
+            android:text="-"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/button_minutes_up"
+            android:layout_width="161dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-250dp"
+            android:layout_marginEnd="70dp"
+            android:text="+"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/button_hours_down"
+            android:layout_width="161dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="253dp"
+            android:text="-"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/button_hours_up"
+            android:layout_width="161dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-253dp"
+            android:layout_marginEnd="255dp"
+            android:text="+"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="163dp"
+            android:layout_height="139dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="122dp"
+            android:layout_marginEnd="252dp"
+            android:background="@drawable/rounded_textview_background"
+            android:gravity="center"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="100sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="163dp"
+            android:layout_height="139dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="122dp"
+            android:layout_marginEnd="64dp"
+            android:background="@drawable/rounded_textview_background"
+            android:gravity="center"
+            android:text="00"
+            android:textAlignment="center"
+            android:textSize="100sp" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

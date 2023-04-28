@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home"
+
+        />
+
+    <item
+
+        android:icon="@drawable/baseline_access_time_24"
+        android:id="@+id/time"
+        android:title="Time"/>
+
+
+    <item
+
+        android:icon="@drawable/baseline_fact_check_24"
+        android:id="@+id/check"
+        android:title="Check"/>
+
+    <item
+
+        android:icon="@drawable/baseline_hourglass_bottom_24"
+        android:id="@+id/inProgress"
+        android:title="InProgress"/>
+
+    <item
+
+        android:icon="@drawable/baseline_flag_24"
+        android:id="@+id/end"
+        android:title="End"/>
+</menu>
