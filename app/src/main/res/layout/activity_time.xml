@@ -225,7 +225,7 @@
         android:layout_height="69dp"
         android:layout_marginStart="316dp"
         android:layout_marginTop="28dp"
-        android:text="Επήλεξε Χρόνο"
+        android:text="Επέλεξε Χρόνο"
         android:textSize="50sp"
 
         app:layout_constraintStart_toEndOf="@+id/button"
