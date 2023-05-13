@@ -3,6 +3,7 @@ package com.example.dishwasherux
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -68,5 +69,17 @@ class ReviewActivity : AppCompatActivity() {
         binding.startMinutes.text = String.format("%02d", finalMinute)
         binding.finishHour.text = String.format("%02d", programFinishHours)
         binding.finishMinutes.text = String.format("%02d", programFinishMinutes)
+
+        var homeNavigation = findViewById<Button>(R.id.homeNavigationBarButton);
+        homeNavigation.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        var selectTimeNavigation = findViewById<Button>(R.id.selectTimeNavigationBar);
+        selectTimeNavigation.setOnClickListener {
+            val intent = Intent(this, TimeActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
