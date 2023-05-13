@@ -171,7 +171,7 @@
         android:layout_height="491dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="152dp"
-        android:text="BACK"
+        android:text="◀"
 
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -183,7 +183,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="152dp"
         android:layout_marginTop="64dp"
-        android:text="Start Time:"
+        android:text="Χρόνος Εκκίνησης:"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/card_soft"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -194,7 +194,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="152dp"
         android:layout_marginTop="284dp"
-        android:text="Finish Time:"
+        android:text="Χρόνος Λήξης:"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/card_soft"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
