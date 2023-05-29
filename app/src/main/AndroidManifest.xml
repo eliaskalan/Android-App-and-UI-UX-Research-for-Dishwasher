@@ -39,5 +39,7 @@
 
             android:label="ReviewActivity"/>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 </manifest>
