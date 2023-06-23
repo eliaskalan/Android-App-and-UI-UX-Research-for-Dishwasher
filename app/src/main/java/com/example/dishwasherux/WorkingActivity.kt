@@ -1,5 +1,7 @@
 package com.example.dishwasherux
 
+import android.content.Intent
+
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -77,24 +79,31 @@ class WorkingActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+
                 isTimerRunning = false
                 startButton.text = "Start"
                 timerHourTextView.text = "00"
                 timerSecondTextView.text = "00"
                 progressBar.progress = 0
                 imageView.visibility = ImageView.GONE
+                pauseTimer()
+
             }
         }
 
         countDownTimer.start()
+
+
         isTimerRunning = true
         startButton.text = "Pause"
+
+
+
     }
 
     private fun pauseTimer() {
-        countDownTimer.cancel()
-        isTimerRunning = false
-        startButton.text = "Start"
+        val intent = Intent(this,FinalActivity::class.java)
+        startActivity(intent)
     }
 
     private fun updateTimer() {

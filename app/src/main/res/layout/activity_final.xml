@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SeekBar
+        android:id="@+id/progressBar2"
+        android:layout_width="745dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:progress="100"
+        android:progressTint="#FF4081"
+        android:thumb="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button2" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="1032dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_home_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="720dp"
+        tools:ignore="MissingConstraints">
+
+    </FrameLayout>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="15dp"
+        android:drawableLeft="@drawable/baseline_power_settings_new_24"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="174dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="412dp"
+        android:layout_marginTop="24dp"
+        android:text="Τέλος"
+        android:textSize="50sp"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:drawableLeft="@drawable/baseline_volume_off_24"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="15dp"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/my_square"
+        android:layout_width="1246dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </View>
+
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="1032dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_flag_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/homeNavigationBarButton"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="24dp"
+        android:drawableTop="@drawable/baseline_home_24"
+        android:drawableTint="@color/white"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/reviewNavigationBar"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="552dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_fact_check_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/inProgressNavigationBar"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="772dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_hourglass_bottom_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <Button
+        android:id="@+id/selectTimeNavigationBar"
+        android:layout_width="113dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/baseline_access_time_24"
+        android:drawablePadding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="8dp"
+        android:text="Πρόγραμμα"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="8dp"
+        android:text="Χρόνος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="780dp"
+        android:layout_marginBottom="8dp"
+        android:text="Σε εξέλιξη"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="1064dp"
+        android:layout_marginBottom="8dp"
+        android:text="Τέλος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="568dp"
+        android:layout_marginBottom="8dp"
+        android:text="Έλεγχος"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_square"
+        app:layout_constraintStart_toStartOf="@+id/my_square" />
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="437dp"
+        android:layout_height="140dp"
+        android:layout_marginEnd="420dp"
+        android:layout_marginBottom="152dp"
+        android:text="Απενεγοπίηση"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView13"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="437dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="420dp"
+        android:background="@drawable/button_outline"
+        android:gravity="center"
+        android:text="Νέα Πλύση"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

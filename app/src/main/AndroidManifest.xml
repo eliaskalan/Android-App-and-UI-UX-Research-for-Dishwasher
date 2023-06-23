@@ -40,7 +40,10 @@
         <activity
             android:name=".WorkingActivity"
             android:label="WorkingActivity"/>
-            />
+        <activity android:name=".FinalActivity"
+            android:label="FinalActivity"/>
+"
+
     </application>
 
 
