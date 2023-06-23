@@ -11,6 +11,8 @@ interface SelectionInterface {
     val description: String
     val duration_minutes: Int
     val duration_hours: Int
+    val demo_hour_time: Int
+    val demo_second_time: Int
 }
 
 object SoftSelection: SelectionInterface {
@@ -22,6 +24,8 @@ object SoftSelection: SelectionInterface {
     override val description: String = "description";
     override val duration_minutes: Int = 30;
     override val duration_hours: Int = 0;
+    override val demo_hour_time: Int = 0;
+    override val demo_second_time: Int = 30;
 }
 object NormalSection: SelectionInterface {
     override var id: String = "normal";
@@ -32,6 +36,8 @@ object NormalSection: SelectionInterface {
     override val description: String = "description";
     override val duration_minutes: Int = 0;
     override val duration_hours: Int = 1;
+    override val demo_hour_time: Int = 1;
+    override val demo_second_time: Int = 0;
 }
 object StrongSection: SelectionInterface {
     override var id: String = "strong";
@@ -42,6 +48,8 @@ object StrongSection: SelectionInterface {
     override val description: String = "description";
     override val duration_minutes: Int = 30;
     override val duration_hours: Int = 1;
+    override val demo_hour_time: Int = 1;
+    override val demo_second_time: Int = 30;
 }
 var Selections = arrayOf(SoftSelection, NormalSection, StrongSection)
 

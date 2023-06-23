@@ -1,5 +1,6 @@
 package com.example.dishwasherux
 
+
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -25,11 +26,15 @@ class ReviewActivity : AppCompatActivity() {
         binding = ActivityReviewBinding.inflate(layoutInflater)
         var durationHours = 0
         var durationMinutes = 0
+        var demo_hour_time = 0
+        var demo_second_time = 0
+
 
         setContentView(binding.root)
         val selectionId = intent.getStringExtra("id")
         val hours = intent.getIntExtra("hours", 0)
         val minutes = intent.getIntExtra("minutes", 0)
+
         for (selection in Selections) {
             if (selection.id == selectionId) {
                 val colorInt = Color.parseColor(selection.color)
@@ -42,6 +47,8 @@ class ReviewActivity : AppCompatActivity() {
                 imgView.setImageDrawable(customImg)
                 durationHours = selection.duration_hours
                 durationMinutes = selection.duration_minutes
+                demo_hour_time = selection.demo_hour_time
+                demo_second_time = selection.demo_second_time
             }
         }
         binding.buttonDetailsBack.setOnClickListener {
@@ -53,6 +60,14 @@ class ReviewActivity : AppCompatActivity() {
         }
         binding.Cancel.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.start.setOnClickListener {
+            val intent = Intent(this, WorkingActivity::class.java)
+            intent.putExtra("id", selectionId)
+            intent.putExtra("demo_hour_time", demo_hour_time.toString())
+            intent.putExtra("demo_second_time", demo_second_time.toString())
             startActivity(intent)
         }
 
