@@ -21,5 +21,10 @@ class FinalActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+        binding.button3.setOnClickListener {
+            // Start MainActivity
+            val intent = Intent(this, SleepAction::class.java)
+            startActivity(intent)
+        }
     }
 }

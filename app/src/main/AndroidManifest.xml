@@ -42,6 +42,8 @@
             android:label="WorkingActivity"/>
         <activity android:name=".FinalActivity"
             android:label="FinalActivity"/>
+        <activity android:name=".SleepAction"
+            android:label="SleepAction"/>
 "
 
     </application>

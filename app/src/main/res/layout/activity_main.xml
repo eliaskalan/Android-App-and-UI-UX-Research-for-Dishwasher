@@ -189,7 +189,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/poweroff"
         android:layout_width="85dp"
         android:layout_height="65dp"
         android:layout_marginStart="55dp"
@@ -208,7 +208,7 @@
         android:layout_marginTop="16dp"
         android:text="Επέλεξε Προγραμμα"
         android:textSize="50sp"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/poweroff"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
