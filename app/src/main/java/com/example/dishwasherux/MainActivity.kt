@@ -20,6 +20,8 @@ import androidx.navigation.ui.navigateUp
 import com.example.dishwasherux.databinding.ActivityMainBinding
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
+import android.widget.Toast
+import java.lang.Thread.sleep
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
@@ -95,7 +97,8 @@ class MainActivity : AppCompatActivity() {
         }
         setupTextToSpeech();
         //startSpeechRecognizer();
-        println("GIANNIS: hello world");
+
+
 
     }
 
@@ -150,9 +153,10 @@ class MainActivity : AppCompatActivity() {
         textToSpeech = TextToSpeech(this) { status ->
             println("GIANNIS: " + status);
             if (status == TextToSpeech.SUCCESS) {
+                Toast.makeText(this, "TextToSpeech success", Toast.LENGTH_SHORT).show()
                 println("GIANNIS: " + "SUCCESS SOUND ");
                 // Set the language for text-to-speech
-                val result = textToSpeech.setLanguage(Locale.US)
+                val result = textToSpeech.setLanguage(Locale("el", "GR"))
                 println("GIANNIS: result" + result);
                 if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                     println("GIANNIS: ERROR TEXT TO SPEECH");
@@ -160,44 +164,27 @@ class MainActivity : AppCompatActivity() {
             } else {
                 println("GIANNIS: FAILED TEXT TO SPEECH");
             }
+            println("GIOANNIS: " + textToSpeech.voice.name)
+            println("GIOANNIS: " + textToSpeech.voice.name)
+            saySomething("Τι θα πλήνουμε σήμερα;")
+            saySomething("Πρώτο πρόγραμμα ελαφρύ 40 βαθμοί, πράσινο");
+            sleep(500)
+            saySomething("Δεύτερο πρόγραμμα κανονικό 60 βαθμοί, πορτοκαλί");
+            sleep(500)
+            saySomething("Τρίτο πρόγραμμα βαρύ 80 βαθμοί, κόκκινο");
+            sleep(500)
+            saySomething("Για πληροφορίες πάτα το μωβ κουμπί κάτω από τις καρτέλες");
         }
 
-        textToSpeech.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
-
-            override fun onStart(utteranceId: String?) {
-                println("GIANNIS: on start play")
-                // Perform any necessary actions when speech synthesis starts
-
-                // Example: Update UI or handle any other logic
-
-                // You can also trigger additional speech synthesis events if needed
-                // For example:
-                textToSpeech.speak("Speech synthesis started", TextToSpeech.QUEUE_FLUSH, null, utteranceId)
-                textToSpeech.speak("Speech synthesis started", TextToSpeech.QUEUE_FLUSH, null, "utteranceId")
-            }
-
-            override fun onDone(utteranceId: String?) {
-                println("GIANNIS: on done play")
-                // Perform any necessary actions when speech synthesis completes
-
-                // Example: Update UI or handle any other logic
-
-                // You can also trigger additional speech synthesis events if needed
-                // For example:
-                textToSpeech.speak("Speech synthesis completed", TextToSpeech.QUEUE_FLUSH, null, utteranceId)
-            }
-
-            override fun onError(utteranceId: String?) {
-                println("GIANNIS: on error play")
-                // Perform any necessary actions when an error occurs during speech synthesis
-
-                // Example: Update UI or handle any other logic
-            }
 
 
+    }
 
-        })
-
+    private fun saySomething(something: String, queueMode: Int = TextToSpeech.QUEUE_ADD) {
+        val speechStatus = textToSpeech.speak(something, queueMode, null, "ID")
+        if (speechStatus == TextToSpeech.ERROR) {
+            Toast.makeText(this, "Cant use the Text to speech." + something, Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onDestroy() {
