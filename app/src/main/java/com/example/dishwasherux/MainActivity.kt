@@ -23,6 +23,7 @@ import androidx.navigation.ui.navigateUp
 import com.example.dishwasherux.databinding.ActivityMainBinding
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import java.lang.Thread.sleep
 import java.util.Locale
@@ -64,6 +65,11 @@ class MainActivity : AppCompatActivity() {
         var strongText = findViewById<TextView>(R.id.text_view_strong);
         strongText.text = StrongSection.title + "\n" + StrongSection.temperature + "°C";
 
+        //mute button
+        var isSoundOpen = MyApplication.getInstance().isSoundOpen;
+        val muteButton = findViewById<Button>(R.id.mute);
+        muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+
         binding.buttonSoftDetail.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
             intent.putExtra("id", SoftSelection.id)
@@ -98,6 +104,13 @@ class MainActivity : AppCompatActivity() {
             // Start MainActivity
             val intent = Intent(this, SleepAction::class.java)
             startActivity(intent)
+        }
+
+        binding.mute.setOnClickListener{
+            isSoundOpen = !isSoundOpen;
+            MyApplication.getInstance().isSoundOpen = isSoundOpen;
+            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+
         }
 
         //startSpeechRecognizer();

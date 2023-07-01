@@ -2,6 +2,7 @@ import android.content.Context
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
+import com.example.dishwasherux.MyApplication
 import java.util.Locale
 
 class TextToSpeechManager(private val context: Context) {
@@ -42,12 +43,15 @@ class TextToSpeechManager(private val context: Context) {
     }
 
     fun speak(text: String, queueMode: Int = TextToSpeech.QUEUE_FLUSH) {
-            queueSize++;
-        if (isInitialized) {
+        val isSoundOpen =MyApplication.getInstance().isSoundOpen;
+        queueSize++;
+        if (isInitialized && isSoundOpen) {
             textToSpeech?.speak(text, queueSize, null, "ID")
         } else {
             Log.e("TextToSpeechManager", "ERROR: TextToSpeech is not initialized.")
         }
+
+
     }
 
     fun shutdown() {
