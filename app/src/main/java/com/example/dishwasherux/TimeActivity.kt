@@ -1,5 +1,6 @@
 package com.example.dishwasherux
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
+import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.dishwasherux.databinding.ActivityTimeBinding
 
@@ -19,6 +21,7 @@ class TimeActivity : AppCompatActivity() {
     private var minutes = 0
     private var hours = 0
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
@@ -90,6 +93,13 @@ class TimeActivity : AppCompatActivity() {
             intent.putExtra("minutes", minutes)
             startActivity(intent)
         }
+
+        var homeNavigation = findViewById<Button>(R.id.homeNavigationBarButton);
+        homeNavigation.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 

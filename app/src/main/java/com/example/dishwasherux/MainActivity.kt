@@ -88,6 +88,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("id", StrongSection.id)
             startActivity(intent)
         }
+        binding.poweroff.setOnClickListener {
+            // Start MainActivity
+            val intent = Intent(this, SleepAction::class.java)
+            startActivity(intent)
+        }
 
 
     }

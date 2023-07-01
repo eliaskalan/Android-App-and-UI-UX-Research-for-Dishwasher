@@ -120,7 +120,7 @@
         android:layout_height="491dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="56dp"
-        android:text="BACK"
+        android:text="◀"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/my_square"
         app:layout_constraintStart_toStartOf="parent" />

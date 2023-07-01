@@ -37,12 +37,11 @@
         app:layout_constraintStart_toStartOf="@+id/my_square" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/homeNavigationBarButton"
         android:layout_width="113dp"
         android:layout_height="67dp"
         android:layout_marginStart="76dp"
         android:layout_marginBottom="24dp"
-        android:background="@android:color/transparent"
         android:drawableTop="@drawable/baseline_home_24"
         android:drawablePadding="10dp"
         android:textColor="@android:color/black"
@@ -51,7 +50,7 @@
         app:layout_constraintStart_toStartOf="@+id/my_square" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/reviewNavigationBar"
         android:layout_width="113dp"
         android:layout_height="67dp"
         android:layout_marginStart="552dp"
@@ -65,7 +64,7 @@
         app:layout_constraintStart_toStartOf="@+id/my_square" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/inProgressNavigationBar"
         android:layout_width="113dp"
         android:layout_height="67dp"
         android:layout_marginStart="772dp"
@@ -79,12 +78,12 @@
         app:layout_constraintStart_toStartOf="@+id/my_square" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/selectTimeNavigationBar"
         android:layout_width="113dp"
         android:layout_height="67dp"
         android:layout_marginStart="308dp"
         android:layout_marginBottom="24dp"
-        android:background="@android:color/transparent"
+        android:drawableTint="@color/white"
         android:drawableTop="@drawable/baseline_access_time_24"
         android:drawablePadding="10dp"
         android:textColor="@android:color/black"
@@ -225,7 +224,7 @@
         android:layout_height="69dp"
         android:layout_marginStart="316dp"
         android:layout_marginTop="28dp"
-        android:text="Επήλεξε Χρόνο"
+        android:text="Επέλεξε Χρόνο"
         android:textSize="50sp"
 
         app:layout_constraintStart_toEndOf="@+id/button"
@@ -250,7 +249,7 @@
         android:layout_height="491dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="80dp"
-        android:text="BACK"
+        android:text="◀"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/my_square"
         app:layout_constraintStart_toStartOf="parent" />
@@ -263,7 +262,7 @@
         android:layout_marginBottom="24dp"
         android:text="Ξεκίνα Τώρα"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/reviewNavigationBar"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <RelativeLayout
