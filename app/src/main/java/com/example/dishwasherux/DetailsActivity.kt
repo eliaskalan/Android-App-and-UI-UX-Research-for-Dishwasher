@@ -1,8 +1,11 @@
 package com.example.dishwasherux
 
+import TextToSpeechManager
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.telecom.Call.Details
 import android.view.LayoutInflater
 import android.view.View
@@ -20,10 +23,11 @@ import com.example.dishwasherux.databinding.DetailsBinding
 class DetailsActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: DetailsBinding
-
+    private lateinit var textToSpeechManager: TextToSpeechManager
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
+        textToSpeechManager = TextToSpeechManager(this)
 
         binding = DetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -48,6 +52,9 @@ class DetailsActivity : AppCompatActivity() {
                 textViewTitle.text = selection.title;
                 val textViewDescription = findViewById<TextView>(R.id.text_view_description);
                 textViewDescription.text = selection.description;
+                Handler(Looper.getMainLooper()).postDelayed({
+                    textToSpeechManager.speak("Πληροφορίες προγράμματος" + selection.description)
+                }, 1000)
             }
         }
 

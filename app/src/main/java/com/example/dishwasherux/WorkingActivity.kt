@@ -1,10 +1,13 @@
 package com.example.dishwasherux
 
+import TextToSpeechManager
 import android.content.Intent
 
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,7 +20,7 @@ class WorkingActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
 
     private lateinit var countDownTimer: CountDownTimer
-
+    private lateinit var textToSpeechManager: TextToSpeechManager
     private var isTimerRunning = false
     private var initialTime: Long = 0
     private var timeRemaining: Long = 0 // Time remaining in milliseconds
@@ -25,7 +28,7 @@ class WorkingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_working)
-
+        textToSpeechManager = TextToSpeechManager(this)
         timerHourTextView = findViewById(R.id.textView6)
         timerSecondTextView = findViewById(R.id.textViewSec)
         startButton = findViewById(R.id.button)
@@ -35,6 +38,9 @@ class WorkingActivity : AppCompatActivity() {
         val demoHourTime = intent.getStringExtra("demo_hour_time")?.toInt()
         val demoSecondTime = intent.getStringExtra("demo_second_time")?.toInt()
 
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Το πλήσιμο ξεκίνησε");
+        }, 1000)
 
         if (demoHourTime != null && demoSecondTime != null) {
             initialTime = ((demoHourTime * 60 ) + (demoSecondTime )) * 1000L

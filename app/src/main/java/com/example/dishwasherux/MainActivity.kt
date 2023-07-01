@@ -1,10 +1,13 @@
 package com.example.dishwasherux
 
 
+import TextToSpeechManager
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.RecognizerIntent
 import android.speech.tts.TextToSpeech
 import android.view.Menu
@@ -28,11 +31,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var textToSpeechManager: TextToSpeechManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
-
+        textToSpeechManager = TextToSpeechManager(this)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -95,8 +99,17 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SleepAction::class.java)
             startActivity(intent)
         }
-        setupTextToSpeech();
+
         //startSpeechRecognizer();
+
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Πρώτο πρόγραμμα ελαφρύ 40 βαθμοί, πράσινο")
+            textToSpeechManager.speak("Δεύτερο πρόγραμμα κανονικό 60 βαθμοί, πορτοκαλί");
+            textToSpeechManager.speak("Τρίτο πρόγραμμα βαρύ 80 βαθμοί, κόκκινο" );
+            textToSpeechManager.speak("Για πληροφορίες πάτα το μωβ κουμπί κάτω από τις καρτέλες" );
+        }, 1000)
+
 
 
 
@@ -126,7 +139,6 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
     private val REQUEST_SPEECH_RECOGNIZER = 3000
-    private lateinit var textToSpeech: TextToSpeech
 
     private val speechRecognizerLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -136,7 +148,6 @@ class MainActivity : AppCompatActivity() {
                 val cityOfInterest = "Your city of interest" // Replace this with the actual value
 
                 // Convert the recognized city to speech
-                textToSpeech.speak(cityOfInterest, TextToSpeech.QUEUE_FLUSH, null, "utteranceId")
             }
         }
 
@@ -148,48 +159,9 @@ class MainActivity : AppCompatActivity() {
         speechRecognizerLauncher.launch(intent)
     }
 
-    private fun setupTextToSpeech() {
-
-        textToSpeech = TextToSpeech(this) { status ->
-            println("GIANNIS: " + status);
-            if (status == TextToSpeech.SUCCESS) {
-                Toast.makeText(this, "TextToSpeech success", Toast.LENGTH_SHORT).show()
-                println("GIANNIS: " + "SUCCESS SOUND ");
-                // Set the language for text-to-speech
-                val result = textToSpeech.setLanguage(Locale("el", "GR"))
-                println("GIANNIS: result" + result);
-                if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                    println("GIANNIS: ERROR TEXT TO SPEECH");
-                }
-            } else {
-                println("GIANNIS: FAILED TEXT TO SPEECH");
-            }
-            println("GIOANNIS: " + textToSpeech.voice.name)
-            println("GIOANNIS: " + textToSpeech.voice.name)
-            saySomething("Τι θα πλήνουμε σήμερα;")
-            saySomething("Πρώτο πρόγραμμα ελαφρύ 40 βαθμοί, πράσινο");
-            sleep(500)
-            saySomething("Δεύτερο πρόγραμμα κανονικό 60 βαθμοί, πορτοκαλί");
-            sleep(500)
-            saySomething("Τρίτο πρόγραμμα βαρύ 80 βαθμοί, κόκκινο");
-            sleep(500)
-            saySomething("Για πληροφορίες πάτα το μωβ κουμπί κάτω από τις καρτέλες");
-        }
-
-
-
-    }
-
-    private fun saySomething(something: String, queueMode: Int = TextToSpeech.QUEUE_ADD) {
-        val speechStatus = textToSpeech.speak(something, queueMode, null, "ID")
-        if (speechStatus == TextToSpeech.ERROR) {
-            Toast.makeText(this, "Cant use the Text to speech." + something, Toast.LENGTH_LONG).show()
-        }
-    }
-
     override fun onDestroy() {
         super.onDestroy()
-        textToSpeech.shutdown()
+        textToSpeechManager.shutdown()
     }
 
 

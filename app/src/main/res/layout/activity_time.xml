@@ -262,6 +262,7 @@
         android:layout_marginBottom="24dp"
         android:text="Ξεκίνα Τώρα"
         android:textSize="30sp"
+        android:backgroundTint="#429454"
         app:layout_constraintBottom_toTopOf="@+id/reviewNavigationBar"
         app:layout_constraintEnd_toEndOf="parent" />
 
