@@ -1,26 +1,26 @@
 package com.example.dishwasherux
 
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import com.google.android.material.snackbar.Snackbar
+import android.speech.RecognizerIntent
+import android.speech.tts.TextToSpeech
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
 import com.example.dishwasherux.databinding.ActivityMainBinding
-import org.w3c.dom.Text
-import java.lang.reflect.Modifier
+import android.speech.tts.UtteranceProgressListener
+import android.util.Log
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -93,7 +93,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SleepAction::class.java)
             startActivity(intent)
         }
-
+        setupTextToSpeech();
+        //startSpeechRecognizer();
+        println("GIANNIS: hello world");
 
     }
 
@@ -120,5 +122,89 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+    private val REQUEST_SPEECH_RECOGNIZER = 3000
+    private lateinit var textToSpeech: TextToSpeech
+
+    private val speechRecognizerLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data: Intent? = result.data
+                // Handle the speech recognition result here
+                val cityOfInterest = "Your city of interest" // Replace this with the actual value
+
+                // Convert the recognized city to speech
+                textToSpeech.speak(cityOfInterest, TextToSpeech.QUEUE_FLUSH, null, "utteranceId")
+            }
+        }
+
+    private fun startSpeechRecognizer() {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en-US")
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "City of Interest?")
+        speechRecognizerLauncher.launch(intent)
+    }
+
+    private fun setupTextToSpeech() {
+
+        textToSpeech = TextToSpeech(this) { status ->
+            println("GIANNIS: " + status);
+            if (status == TextToSpeech.SUCCESS) {
+                println("GIANNIS: " + "SUCCESS SOUND ");
+                // Set the language for text-to-speech
+                val result = textToSpeech.setLanguage(Locale.US)
+                println("GIANNIS: result" + result);
+                if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    println("GIANNIS: ERROR TEXT TO SPEECH");
+                }
+            } else {
+                println("GIANNIS: FAILED TEXT TO SPEECH");
+            }
+        }
+
+        textToSpeech.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
+
+            override fun onStart(utteranceId: String?) {
+                println("GIANNIS: on start play")
+                // Perform any necessary actions when speech synthesis starts
+
+                // Example: Update UI or handle any other logic
+
+                // You can also trigger additional speech synthesis events if needed
+                // For example:
+                textToSpeech.speak("Speech synthesis started", TextToSpeech.QUEUE_FLUSH, null, utteranceId)
+                textToSpeech.speak("Speech synthesis started", TextToSpeech.QUEUE_FLUSH, null, "utteranceId")
+            }
+
+            override fun onDone(utteranceId: String?) {
+                println("GIANNIS: on done play")
+                // Perform any necessary actions when speech synthesis completes
+
+                // Example: Update UI or handle any other logic
+
+                // You can also trigger additional speech synthesis events if needed
+                // For example:
+                textToSpeech.speak("Speech synthesis completed", TextToSpeech.QUEUE_FLUSH, null, utteranceId)
+            }
+
+            override fun onError(utteranceId: String?) {
+                println("GIANNIS: on error play")
+                // Perform any necessary actions when an error occurs during speech synthesis
+
+                // Example: Update UI or handle any other logic
+            }
+
+
+
+        })
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        textToSpeech.shutdown()
+    }
+
+
 }
 
