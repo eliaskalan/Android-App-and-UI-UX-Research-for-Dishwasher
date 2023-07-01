@@ -36,8 +36,19 @@
             android:label="Time Activity"/>
         <activity
             android:name=".ReviewActivity"
-
             android:label="ReviewActivity"/>
+        <activity
+            android:name=".WorkingActivity"
+            android:label="WorkingActivity"/>
+        <activity android:name=".FinalActivity"
+            android:label="FinalActivity"/>
+        <activity android:name=".SleepAction"
+            android:label="SleepAction"/>
+"
+
     </application>
+
+
+
 
 </manifest>
