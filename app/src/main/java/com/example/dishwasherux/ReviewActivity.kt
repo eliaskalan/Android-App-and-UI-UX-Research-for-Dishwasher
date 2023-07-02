@@ -106,6 +106,17 @@ class ReviewActivity : AppCompatActivity() {
             val intent = Intent(this, TimeActivity::class.java)
             startActivity(intent)
         }
+        //mute button
+        var isSoundOpen = MyApplication.getInstance().isSoundOpen;
+        val muteButton = findViewById<Button>(R.id.mute);
+        muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+
+        binding.mute.setOnClickListener{
+            isSoundOpen = !isSoundOpen;
+            MyApplication.getInstance().isSoundOpen = isSoundOpen;
+            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+
+        }
 
     }
 }

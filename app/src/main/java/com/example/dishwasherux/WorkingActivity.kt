@@ -10,9 +10,10 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dishwasherux.databinding.ActivityReviewBinding
 
 class WorkingActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityReviewBinding
     private lateinit var timerHourTextView: TextView
     private lateinit var timerSecondTextView: TextView
     private lateinit var startButton: Button
@@ -61,6 +62,18 @@ class WorkingActivity : AppCompatActivity() {
 
         // Start the timer automatically when the activity is created
         startTimer()
+        //mute button
+        binding = ActivityReviewBinding.inflate(layoutInflater)
+        var isSoundOpen = MyApplication.getInstance().isSoundOpen;
+        val muteButton = findViewById<Button>(R.id.mute);
+        muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+
+        binding.mute.setOnClickListener{
+            isSoundOpen = !isSoundOpen;
+            MyApplication.getInstance().isSoundOpen = isSoundOpen;
+            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+
+        }
     }
 
 

@@ -70,6 +70,14 @@ class MainActivity : AppCompatActivity() {
         val muteButton = findViewById<Button>(R.id.mute);
         muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
 
+        binding.mute.setOnClickListener{
+            isSoundOpen = !isSoundOpen;
+            MyApplication.getInstance().isSoundOpen = isSoundOpen;
+            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+
+        }
+
+
         binding.buttonSoftDetail.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
             intent.putExtra("id", SoftSelection.id)
@@ -106,14 +114,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.mute.setOnClickListener{
-            isSoundOpen = !isSoundOpen;
-            MyApplication.getInstance().isSoundOpen = isSoundOpen;
-            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
-
-        }
-
-        //startSpeechRecognizer();
 
 
         Handler(Looper.getMainLooper()).postDelayed({
