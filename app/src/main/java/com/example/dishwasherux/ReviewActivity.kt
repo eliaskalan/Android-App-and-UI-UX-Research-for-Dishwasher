@@ -89,13 +89,8 @@ class ReviewActivity : AppCompatActivity() {
         binding.startMinutes.text = String.format("%02d", finalMinute)
         binding.finishHour.text = String.format("%02d", programFinishHours)
         binding.finishMinutes.text = String.format("%02d", programFinishMinutes)
+        playReviewActivitySounds(finalHour, finalMinute, programFinishHours, programFinishMinutes);
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            textToSpeechManager.speak("Το πλήσιμο θα ξεκινήσει στις " +
-                    String.format("%2d", finalHour) + "και" + String.format("%02d", finalMinute) + " Θα λήξη στις" +   String.format("%2d", programFinishHours) + "και" + String.format("%02d", programFinishMinutes) )
-            textToSpeechManager.speak("Πάτα το πράσινο κουμπί για να ξεκινήσεις, αλλιώς πάτα το κουμπί ακύρωση ή το κουμπί που " +
-                    "πηγαίνεις πίσω" )
-        }, 1000)
         var homeNavigation = findViewById<Button>(R.id.homeNavigationBarButton);
         homeNavigation.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -115,8 +110,19 @@ class ReviewActivity : AppCompatActivity() {
             isSoundOpen = !isSoundOpen;
             MyApplication.getInstance().isSoundOpen = isSoundOpen;
             muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
-
+            playReviewActivitySounds(finalHour, finalMinute, programFinishHours, programFinishMinutes);
         }
 
+
+
+    }
+
+    private fun  playReviewActivitySounds (finalHour: Int, finalMinute: Int, programFinishHours: Int, programFinishMinutes: Int) {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Το πλήσιμο θα ξεκινήσει στις " +
+                    String.format("%2d", finalHour) + "και" + String.format("%02d", finalMinute) + " Θα λήξη στις" +   String.format("%2d", programFinishHours) + "και" + String.format("%02d", programFinishMinutes) )
+            textToSpeechManager.speak("Πάτα το πράσινο κουμπί για να ξεκινήσεις, αλλιώς πάτα το κουμπί ακύρωση ή το κουμπί που " +
+                    "πηγαίνεις πίσω" )
+        }, 1000)
     }
 }

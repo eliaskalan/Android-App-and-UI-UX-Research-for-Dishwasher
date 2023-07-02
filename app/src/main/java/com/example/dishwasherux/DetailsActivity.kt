@@ -25,6 +25,7 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: DetailsBinding
     private lateinit var textToSpeechManager: TextToSpeechManager
+    private  var description = "";
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
@@ -47,7 +48,7 @@ class DetailsActivity : AppCompatActivity() {
             isSoundOpen = !isSoundOpen;
             MyApplication.getInstance().isSoundOpen = isSoundOpen;
             muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
-
+            detailsActivitySounds();
         }
         val selectionId = intent.getStringExtra("id");
         for(selection in Selections){
@@ -64,12 +65,17 @@ class DetailsActivity : AppCompatActivity() {
                 textViewTitle.text = selection.title;
                 val textViewDescription = findViewById<TextView>(R.id.text_view_description);
                 textViewDescription.text = selection.description;
-                Handler(Looper.getMainLooper()).postDelayed({
-                    textToSpeechManager.speak("Πληροφορίες προγράμματος" + selection.description)
-                }, 1000)
+                description = selection.description;
+                detailsActivitySounds();
             }
         }
 
 
+    }
+
+    private fun  detailsActivitySounds () {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Πληροφορίες προγράμματος" + this.description)
+        }, 1000)
     }
 }

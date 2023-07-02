@@ -39,9 +39,7 @@ class WorkingActivity : AppCompatActivity() {
         val demoHourTime = intent.getStringExtra("demo_hour_time")?.toInt()
         val demoSecondTime = intent.getStringExtra("demo_second_time")?.toInt()
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            textToSpeechManager.speak("Το πλήσιμο ξεκίνησε");
-        }, 1000)
+
 
         if (demoHourTime != null && demoSecondTime != null) {
             initialTime = ((demoHourTime * 60 ) + (demoSecondTime )) * 1000L
@@ -67,12 +65,12 @@ class WorkingActivity : AppCompatActivity() {
         var isSoundOpen = MyApplication.getInstance().isSoundOpen;
         val muteButton = findViewById<Button>(R.id.mute);
         muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
-
+        playWorkingActivitySounds();
         binding.mute.setOnClickListener{
             isSoundOpen = !isSoundOpen;
             MyApplication.getInstance().isSoundOpen = isSoundOpen;
             muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
-
+            playWorkingActivitySounds();
         }
     }
 
@@ -137,5 +135,11 @@ class WorkingActivity : AppCompatActivity() {
     private fun updateProgressBar() {
         val progress = ((initialTime - timeRemaining) * 100 / initialTime).toInt()
         progressBar.progress = progress
+    }
+
+    private fun  playWorkingActivitySounds () {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Το πλήσιμο ξεκίνησε");
+        }, 1000)
     }
 }

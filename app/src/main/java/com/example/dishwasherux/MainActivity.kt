@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             isSoundOpen = !isSoundOpen;
             MyApplication.getInstance().isSoundOpen = isSoundOpen;
             muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
-
+            playMainActivitySounds();
         }
 
 
@@ -114,22 +114,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            textToSpeechManager.speak("Πρώτο πρόγραμμα ελαφρύ 40 βαθμοί, πράσινο")
-            textToSpeechManager.speak("Δεύτερο πρόγραμμα κανονικό 60 βαθμοί, πορτοκαλί");
-            textToSpeechManager.speak("Τρίτο πρόγραμμα βαρύ 80 βαθμοί, κόκκινο" );
-            textToSpeechManager.speak("Για πληροφορίες πάτα το μωβ κουμπί κάτω από τις καρτέλες" );
-        }, 1000)
-
-
-
+        playMainActivitySounds();
 
     }
 
 
-
+private fun  playMainActivitySounds () {
+    Handler(Looper.getMainLooper()).postDelayed({
+        textToSpeechManager.speak("Πρώτο πρόγραμμα ελαφρύ 40 βαθμοί, πράσινο")
+        textToSpeechManager.speak("Δεύτερο πρόγραμμα κανονικό 60 βαθμοί, πορτοκαλί");
+        textToSpeechManager.speak("Τρίτο πρόγραμμα βαρύ 80 βαθμοί, κόκκινο" );
+        textToSpeechManager.speak("Για πληροφορίες πάτα το μωβ κουμπί κάτω από τις καρτέλες" );
+    }, 1000)
+}
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)

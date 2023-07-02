@@ -19,9 +19,7 @@ class FinalActivity : AppCompatActivity() {
         binding = ActivityFinalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         textToSpeechManager = TextToSpeechManager(this)
-        Handler(Looper.getMainLooper()).postDelayed({
-            textToSpeechManager.speak("Το πλήσιμο τελείωσε");
-        }, 1000)
+        finalActivitySounds();
 
         //mute button
         var isSoundOpen = MyApplication.getInstance().isSoundOpen;
@@ -32,7 +30,7 @@ class FinalActivity : AppCompatActivity() {
             isSoundOpen = !isSoundOpen;
             MyApplication.getInstance().isSoundOpen = isSoundOpen;
             muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
-
+            finalActivitySounds()
         }
         // Set click listener for Button 10
         binding.button10.setOnClickListener {
@@ -45,5 +43,10 @@ class FinalActivity : AppCompatActivity() {
             val intent = Intent(this, SleepAction::class.java)
             startActivity(intent)
         }
+    }
+    private fun  finalActivitySounds () {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Το πλήσιμο τελείωσε");
+        }, 1000)
     }
 }

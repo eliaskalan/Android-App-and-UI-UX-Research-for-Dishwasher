@@ -24,6 +24,7 @@ class TimeActivity : AppCompatActivity() {
     private var minutes = 0
     private var hours = 0
     private lateinit var textToSpeechManager: TextToSpeechManager
+    private var title: String = "";
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -45,7 +46,7 @@ class TimeActivity : AppCompatActivity() {
             isSoundOpen = !isSoundOpen;
             MyApplication.getInstance().isSoundOpen = isSoundOpen;
             muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
-
+            playTimeActivitySounds();
         }
         val selectionId = intent.getStringExtra("id");
         for (selection in Selections) {
@@ -58,11 +59,8 @@ class TimeActivity : AppCompatActivity() {
                 val imgView = findViewById<ImageView>(R.id.image_view)
                 val customImg = resources.getDrawable(selection.imagePath, theme)
                 imgView.setImageDrawable(customImg)
-                Handler(Looper.getMainLooper()).postDelayed({
-                    textToSpeechManager.speak("Έχεις επιλέξει το" + selection.title + " πρόγραμμα. Τώρα, επέλεξε σε πόσο χρόνο θέλεις να ξεκινήσει to πλύσιμο. " +
-                        "Άμα θέλεις να ξεκινήσει τώρα, πάτα το πράσινο κουμπί που βρίσκεται κάτω δεξιά στην οθόνη. Άμα θέλεις να ορίσεις, εσύ σε πόση " +
-                            "ώρα θα ξεκινήσει πάτα το σύμβολο του '+' και του '-'")
-                }, 1000)
+                title = selection.title;
+                playTimeActivitySounds();
             }
         }
 
@@ -137,6 +135,14 @@ class TimeActivity : AppCompatActivity() {
             textToSpeechManager.speak("Έχεις ορίσει να ξεκινήσει τώρα")
         }
 
+    }
+
+    private fun  playTimeActivitySounds () {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Έχεις επιλέξει το" + this.title + " πρόγραμμα. Τώρα, επέλεξε σε πόσο χρόνο θέλεις να ξεκινήσει to πλύσιμο. " +
+                    "Άμα θέλεις να ξεκινήσει τώρα, πάτα το πράσινο κουμπί που βρίσκεται κάτω δεξιά στην οθόνη. Άμα θέλεις να ορίσεις, εσύ σε πόση " +
+                    "ώρα θα ξεκινήσει πάτα το σύμβολο του '+' και του '-'")
+        }, 1000)
     }
 
 }
