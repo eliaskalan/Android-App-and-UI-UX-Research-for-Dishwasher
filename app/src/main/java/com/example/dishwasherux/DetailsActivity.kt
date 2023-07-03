@@ -1,12 +1,16 @@
 package com.example.dishwasherux
 
+import TextToSpeechManager
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.telecom.Call.Details
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -20,10 +24,12 @@ import com.example.dishwasherux.databinding.DetailsBinding
 class DetailsActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: DetailsBinding
-
+    private lateinit var textToSpeechManager: TextToSpeechManager
+    private  var description = "";
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
+        textToSpeechManager = TextToSpeechManager(this)
 
         binding = DetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -32,6 +38,17 @@ class DetailsActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
+        }
+        //mute button
+        var isSoundOpen = MyApplication.getInstance().isSoundOpen;
+        val muteButton = findViewById<Button>(R.id.mute);
+        muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+
+        binding.mute.setOnClickListener{
+            isSoundOpen = !isSoundOpen;
+            MyApplication.getInstance().isSoundOpen = isSoundOpen;
+            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+            detailsActivitySounds();
         }
         val selectionId = intent.getStringExtra("id");
         for(selection in Selections){
@@ -48,9 +65,17 @@ class DetailsActivity : AppCompatActivity() {
                 textViewTitle.text = selection.title;
                 val textViewDescription = findViewById<TextView>(R.id.text_view_description);
                 textViewDescription.text = selection.description;
+                description = selection.description;
+                detailsActivitySounds();
             }
         }
 
 
+    }
+
+    private fun  detailsActivitySounds () {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Πληροφορίες προγράμματος" + this.description)
+        }, 1000)
     }
 }

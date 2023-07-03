@@ -1,9 +1,12 @@
 package com.example.dishwasherux
 
 
+import TextToSpeechManager
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -19,10 +22,11 @@ import java.util.Calendar
 class ReviewActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityReviewBinding
+    private lateinit var textToSpeechManager: TextToSpeechManager
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
-
+        textToSpeechManager = TextToSpeechManager(this)
         binding = ActivityReviewBinding.inflate(layoutInflater)
         var durationHours = 0
         var durationMinutes = 0
@@ -49,6 +53,7 @@ class ReviewActivity : AppCompatActivity() {
                 durationMinutes = selection.duration_minutes
                 demo_hour_time = selection.demo_hour_time
                 demo_second_time = selection.demo_second_time
+
             }
         }
         binding.buttonDetailsBack.setOnClickListener {
@@ -84,6 +89,7 @@ class ReviewActivity : AppCompatActivity() {
         binding.startMinutes.text = String.format("%02d", finalMinute)
         binding.finishHour.text = String.format("%02d", programFinishHours)
         binding.finishMinutes.text = String.format("%02d", programFinishMinutes)
+        playReviewActivitySounds(finalHour, finalMinute, programFinishHours, programFinishMinutes);
 
         var homeNavigation = findViewById<Button>(R.id.homeNavigationBarButton);
         homeNavigation.setOnClickListener {
@@ -95,6 +101,28 @@ class ReviewActivity : AppCompatActivity() {
             val intent = Intent(this, TimeActivity::class.java)
             startActivity(intent)
         }
+        //mute button
+        var isSoundOpen = MyApplication.getInstance().isSoundOpen;
+        val muteButton = findViewById<Button>(R.id.mute);
+        muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
 
+        binding.mute.setOnClickListener{
+            isSoundOpen = !isSoundOpen;
+            MyApplication.getInstance().isSoundOpen = isSoundOpen;
+            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+            playReviewActivitySounds(finalHour, finalMinute, programFinishHours, programFinishMinutes);
+        }
+
+
+
+    }
+
+    private fun  playReviewActivitySounds (finalHour: Int, finalMinute: Int, programFinishHours: Int, programFinishMinutes: Int) {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Το πλήσιμο θα ξεκινήσει στις " +
+                    String.format("%2d", finalHour) + "και" + String.format("%02d", finalMinute) + " Θα λήξη στις" +   String.format("%2d", programFinishHours) + "και" + String.format("%02d", programFinishMinutes) )
+            textToSpeechManager.speak("Πάτα το πράσινο κουμπί για να ξεκινήσεις, αλλιώς πάτα το κουμπί ακύρωση ή το κουμπί που " +
+                    "πηγαίνεις πίσω" )
+        }, 1000)
     }
 }

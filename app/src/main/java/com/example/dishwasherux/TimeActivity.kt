@@ -1,9 +1,12 @@
 package com.example.dishwasherux
 
+import TextToSpeechManager
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -20,12 +23,13 @@ class TimeActivity : AppCompatActivity() {
 
     private var minutes = 0
     private var hours = 0
-
+    private lateinit var textToSpeechManager: TextToSpeechManager
+    private var title: String = "";
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
-
+        textToSpeechManager = TextToSpeechManager(this)
         binding = ActivityTimeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -34,6 +38,16 @@ class TimeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //mute button
+        var isSoundOpen = MyApplication.getInstance().isSoundOpen;
+        val muteButton = findViewById<Button>(R.id.mute);
+        muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+        binding.mute.setOnClickListener{
+            isSoundOpen = !isSoundOpen;
+            MyApplication.getInstance().isSoundOpen = isSoundOpen;
+            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+            playTimeActivitySounds();
+        }
         val selectionId = intent.getStringExtra("id");
         for (selection in Selections) {
             if (selection.id == selectionId) {
@@ -45,6 +59,8 @@ class TimeActivity : AppCompatActivity() {
                 val imgView = findViewById<ImageView>(R.id.image_view)
                 val customImg = resources.getDrawable(selection.imagePath, theme)
                 imgView.setImageDrawable(customImg)
+                title = selection.title;
+                playTimeActivitySounds();
             }
         }
 
@@ -110,10 +126,23 @@ class TimeActivity : AppCompatActivity() {
             val txtContainer = findViewById<Button>(R.id.start_button)
             txtContainer.text =
                 "Ξεκίνα σε " + String.format("%02d", hours) + ":" + String.format("%02d", minutes)
+            val tellHours = if (hours == 1) "μία ώρα" else String.format("%2d", hours) + "ώρες"
+            textToSpeechManager.speak("Έχεις ορίσει να ξεκινήσει σε" + tellHours + "και" +  String.format("%2d", minutes) + "λεπτά")
+
         }else {
             val txtContainer = findViewById<Button>(R.id.start_button)
             txtContainer.text = "Ξεκίνα Τωρα "
+            textToSpeechManager.speak("Έχεις ορίσει να ξεκινήσει τώρα")
         }
+
+    }
+
+    private fun  playTimeActivitySounds () {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Έχεις επιλέξει το" + this.title + " πρόγραμμα. Τώρα, επέλεξε σε πόσο χρόνο θέλεις να ξεκινήσει to πλύσιμο. " +
+                    "Άμα θέλεις να ξεκινήσει τώρα, πάτα το πράσινο κουμπί που βρίσκεται κάτω δεξιά στην οθόνη. Άμα θέλεις να ορίσεις, εσύ σε πόση " +
+                    "ώρα θα ξεκινήσει πάτα το σύμβολο του '+' και του '-'")
+        }, 1000)
     }
 
 }

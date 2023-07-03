@@ -232,12 +232,11 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/mute"
         android:layout_width="85dp"
         android:layout_height="65dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="36dp"
-        android:drawableLeft="@drawable/baseline_volume_off_24"
         android:drawablePadding="10dp"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -262,6 +261,7 @@
         android:layout_marginBottom="24dp"
         android:text="Ξεκίνα Τώρα"
         android:textSize="30sp"
+        android:backgroundTint="#429454"
         app:layout_constraintBottom_toTopOf="@+id/reviewNavigationBar"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -1,15 +1,19 @@
 package com.example.dishwasherux
 
+import TextToSpeechManager
 import android.content.Intent
 
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dishwasherux.databinding.ActivityReviewBinding
 
 class WorkingActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityReviewBinding
     private lateinit var timerHourTextView: TextView
     private lateinit var timerSecondTextView: TextView
     private lateinit var startButton: Button
@@ -17,7 +21,7 @@ class WorkingActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
 
     private lateinit var countDownTimer: CountDownTimer
-
+    private lateinit var textToSpeechManager: TextToSpeechManager
     private var isTimerRunning = false
     private var initialTime: Long = 0
     private var timeRemaining: Long = 0 // Time remaining in milliseconds
@@ -25,7 +29,7 @@ class WorkingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_working)
-
+        textToSpeechManager = TextToSpeechManager(this)
         timerHourTextView = findViewById(R.id.textView6)
         timerSecondTextView = findViewById(R.id.textViewSec)
         startButton = findViewById(R.id.button)
@@ -34,6 +38,7 @@ class WorkingActivity : AppCompatActivity() {
 
         val demoHourTime = intent.getStringExtra("demo_hour_time")?.toInt()
         val demoSecondTime = intent.getStringExtra("demo_second_time")?.toInt()
+
 
 
         if (demoHourTime != null && demoSecondTime != null) {
@@ -55,6 +60,18 @@ class WorkingActivity : AppCompatActivity() {
 
         // Start the timer automatically when the activity is created
         startTimer()
+        //mute button
+        binding = ActivityReviewBinding.inflate(layoutInflater)
+        var isSoundOpen = MyApplication.getInstance().isSoundOpen;
+        val muteButton = findViewById<Button>(R.id.mute);
+        muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+        playWorkingActivitySounds();
+        binding.mute.setOnClickListener{
+            isSoundOpen = !isSoundOpen;
+            MyApplication.getInstance().isSoundOpen = isSoundOpen;
+            muteButton.setBackgroundResource(MyApplication.getInstance().soundDrawable)
+            playWorkingActivitySounds();
+        }
     }
 
 
@@ -118,5 +135,11 @@ class WorkingActivity : AppCompatActivity() {
     private fun updateProgressBar() {
         val progress = ((initialTime - timeRemaining) * 100 / initialTime).toInt()
         progressBar.progress = progress
+    }
+
+    private fun  playWorkingActivitySounds () {
+        Handler(Looper.getMainLooper()).postDelayed({
+            textToSpeechManager.speak("Το πλήσιμο ξεκίνησε");
+        }, 1000)
     }
 }
